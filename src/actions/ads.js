@@ -75,3 +75,22 @@ export const deleteAd = id => dispatch => {
     })
     .catch(console.error);
 };
+
+// editing a single ad
+export const AD_EDIT_SUCCESS = "AD_EDIT_SUCCESS";
+
+const editAdSuccess = newData => ({
+  type: AD_EDIT_SUCCESS,
+  newData
+});
+
+export const editAd = (id, values) => dispatch => {
+  request
+    .put(`${baseUrl}/ads/${id}`)
+    .send(values)
+    .then(response => {
+      dispatch(editAdSuccess(response.body));
+      dispatch(loadAd(id));
+    })
+    .catch(console.error);
+};

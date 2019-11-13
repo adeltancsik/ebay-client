@@ -19,8 +19,8 @@ class AddAdFormContainer extends React.Component {
     });
   };
 
-  onSubmit = ad => {
-    ad.preventDefault();
+  onSubmit = event => {
+    event.preventDefault();
     this.props.createAd(this.state);
     this.setState({
       title: "",

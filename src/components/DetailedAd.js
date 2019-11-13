@@ -16,6 +16,7 @@ export default function DetailedAd(props) {
             style={({ width: 120 }, { borderRadius: 40 })}
           />
           <button onClick={props.onDelete}>Delete</button>
+          <button onClick={props.onEdit}>Edit</button>
         </div>
       )}
     </div>
