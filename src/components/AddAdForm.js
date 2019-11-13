@@ -3,7 +3,7 @@ import React from "react";
 export default function AddAdForm(props) {
   return (
     <div className="adform">
-      <h3>Add an advertisement:</h3>
+      <h3>Add a new advertisement:</h3>
       <form onSubmit={props.onSubmit}>
         <label>Title:</label>
         <input

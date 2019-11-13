@@ -2,6 +2,7 @@ import request from "superagent";
 
 const baseUrl = "http://localhost:4000";
 
+// fetching for displaying all the ads
 export const ADS_FETCHED = "ADS_FETCHED";
 
 const adsFetched = ads => ({
@@ -22,6 +23,7 @@ export const loadAds = () => (dispatch, getState) => {
     .catch(console.error);
 };
 
+// fetching a single ad based on its id for displaying it
 export const AD_FETCHED = "AD_FETCHED";
 
 const loadAdSuccess = ad => ({
@@ -29,6 +31,7 @@ const loadAdSuccess = ad => ({
   ad
 });
 
+// loadAd is a function w an argument id, that return a function dispatch
 export const loadAd = id => dispatch => {
   request
     .get(`${baseUrl}/ads/${id}`)
@@ -38,6 +41,7 @@ export const loadAd = id => dispatch => {
     .catch(console.error);
 };
 
+// creating a new ad
 export const AD_CREATE_SUCCESS = "AD_CREATE_SUCCESS";
 
 const adCreateSuccess = ad => ({
@@ -51,6 +55,23 @@ export const createAd = data => dispatch => {
     .send(data)
     .then(response => {
       dispatch(adCreateSuccess(response.body));
+    })
+    .catch(console.error);
+};
+
+// deleting a single ad
+export const AD_DELETE_SUCCESS = "AD_DELETE_SUCCESS";
+
+const deleteAdSuccess = adId => ({
+  type: AD_DELETE_SUCCESS,
+  adId
+});
+
+export const deleteAd = id => dispatch => {
+  request
+    .delete(`${baseUrl}/ads/${id}`)
+    .then(() => {
+      dispatch(deleteAdSuccess(id));
     })
     .catch(console.error);
 };

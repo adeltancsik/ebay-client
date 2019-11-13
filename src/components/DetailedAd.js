@@ -15,7 +15,7 @@ export default function DetailedAd(props) {
             alt={props.ad.id}
             style={({ width: 120 }, { borderRadius: 40 })}
           />
-          {/* <button onClick={props.onDelete}>Delete</button> */}
+          <button onClick={props.onDelete}>Delete</button>
         </div>
       )}
     </div>
