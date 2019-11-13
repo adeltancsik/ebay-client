@@ -2,6 +2,7 @@ import React from "react";
 import { loadAds } from "../actions/ads";
 import { connect } from "react-redux";
 import AdList from "./AdList";
+import AddAdFormContainer from "./AddAdFormContainer";
 
 class AdListContainer extends React.Component {
   componentDidMount() {
@@ -9,7 +10,12 @@ class AdListContainer extends React.Component {
   }
 
   render() {
-    return <AdList ads={this.props.ads} />;
+    return (
+      <div>
+        <AddAdFormContainer />
+        <AdList ads={this.props.ads} />
+      </div>
+    );
   }
 }
 

@@ -37,3 +37,20 @@ export const loadAd = id => dispatch => {
     })
     .catch(console.error);
 };
+
+export const AD_CREATE_SUCCESS = "AD_CREATE_SUCCESS";
+
+const adCreateSuccess = ad => ({
+  type: AD_CREATE_SUCCESS,
+  ad
+});
+
+export const createAd = data => dispatch => {
+  request
+    .post(`${baseUrl}/ads`)
+    .send(data)
+    .then(response => {
+      dispatch(adCreateSuccess(response.body));
+    })
+    .catch(console.error);
+};
