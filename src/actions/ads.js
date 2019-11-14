@@ -49,9 +49,13 @@ const adCreateSuccess = ad => ({
   ad
 });
 
-export const createAd = data => dispatch => {
+export const createAd = data => (dispatch, getState) => {
+  const state = getState();
+  const { user } = state;
+
   request
     .post(`${baseUrl}/ads`)
+    .set("Authorization", `Bearer ${user}`)
     .send(data)
     .then(response => {
       dispatch(adCreateSuccess(response.body));
