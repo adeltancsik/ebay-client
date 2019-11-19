@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import AdList from "./AdList";
 import AddAdFormContainer from "./AddAdFormContainer";
 import LoginFormContainer from "./LoginFormContainer";
+import SignupFormContainer from "./SignupFormContainer";
 
 class AdListContainer extends React.Component {
   componentDidMount() {
@@ -13,7 +14,14 @@ class AdListContainer extends React.Component {
   render() {
     return (
       <div>
-        {!this.props.user ? <LoginFormContainer /> : <AddAdFormContainer />}
+        {!this.props.user ? (
+          <div>
+            {" "}
+            <SignupFormContainer /> <LoginFormContainer />
+          </div>
+        ) : (
+          <AddAdFormContainer />
+        )}
         <AdList ads={this.props.ads} />
       </div>
     );

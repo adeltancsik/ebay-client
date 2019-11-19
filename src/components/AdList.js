@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./styling/AdList.css";
 
 export default function AdList(props) {
   return (
@@ -11,11 +12,20 @@ export default function AdList(props) {
           {props.ads.map(ad => {
             return (
               <li className="ad" key={ad.id}>
-                <Link to={`/ads/${ad.id}`}>
+                <Link to={`/ads/${ad.id}`} className="link">
                   {ad.title}
-                  <img src={ad.url} alt={ad.id} style={{ width: 80 }} />
+                  <img
+                    src={ad.url}
+                    alt={ad.id}
+                    style={{
+                      width: 90,
+                      display: "block",
+                      position: "center",
+                      margin: "auto"
+                    }}
+                  />
                 </Link>
-                Price: {ad.price} €
+                <small>Price: {ad.price} € </small>
               </li>
             );
           })}

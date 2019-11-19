@@ -23,3 +23,23 @@ export const login = (email, password) => dispatch => {
     })
     .catch(console.error);
 };
+
+export const SIGNUP_SUCCESS = "SIGNUP_SUCCESS";
+
+function signupSuccess(payload) {
+  return {
+    type: SIGNUP_SUCCESS,
+    payload
+  };
+}
+
+export const signup = (email, password) => dispatch => {
+  request
+    .post(`${baseUrl}/user`)
+    .send({ email, password })
+    .then(response => {
+      const action = signupSuccess(response.body);
+      dispatch(action);
+    })
+    .catch(console.error);
+};

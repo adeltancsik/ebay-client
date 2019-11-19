@@ -1,0 +1,32 @@
+.adlist {
+  text-align: center;
+  font-family: "Courier New", Courier, monospace;
+  cursor: pointer;
+}
+
+.adlist ul {
+  list-style-type: disc;
+  color: brown;
+  list-style-position: inside;
+}
+
+.adlist li {
+  display: list-item;
+  text-align: -webkit-match-parent;
+}
+
+a:link {
+  color: red;
+}
+/* visited link */
+a:visited {
+  color: green;
+}
+/* mouse over link */
+a:hover {
+  color: hotpink;
+}
+/* selected link */
+a:active {
+  color: blue;
+}
