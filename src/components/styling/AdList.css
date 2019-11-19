@@ -1,10 +1,11 @@
-.adlist {
-  text-align: center;
+.adlist p,
+a {
   font-family: "Courier New", Courier, monospace;
   cursor: pointer;
 }
 
 .adlist ul {
+  text-align: center;
   list-style-type: disc;
   color: brown;
   list-style-position: inside;

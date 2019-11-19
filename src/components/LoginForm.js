@@ -1,11 +1,11 @@
 import React from "react";
-import "./styling/LoginForm.css";
 import { Form, Button, Row, Col } from "react-bootstrap";
+import "./styling/LoginForm.css";
 
 export default function LoginForm(props) {
   return (
     <div className="loginform">
-      <h3>Please log in:</h3>
+      <h5>Please log in:</h5>
       <Form onSubmit={props.onSubmit}>
         <Row>
           <Form.Group controlId="formBasicEmail">
@@ -30,10 +30,10 @@ export default function LoginForm(props) {
               />
             </Col>
           </Form.Group>
-          <Button variant="outline-dark" type="submit" value="Submit">
-            Submit
-          </Button>
         </Row>
+        <Button variant="outline-dark" type="submit" value="Submit" size="sm">
+          Submit
+        </Button>
       </Form>
     </div>
   );
