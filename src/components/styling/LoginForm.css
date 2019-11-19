@@ -34,7 +34,8 @@
 } */
 
 .loginform,
-.signupform {
+.signupform,
+.adform {
   border-radius: 5px;
   padding: 10px;
   font-family: "Courier New", Courier, monospace;
